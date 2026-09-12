@@ -6,7 +6,7 @@ app.use(express.json());
 
 app.get("/", (req, res) => {
   res.json({
-    message: "Ecommerce Api is Running!",
+    message: "Ecommerce Api is Running with TypeScript!",
   });
 });
 
