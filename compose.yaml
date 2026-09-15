@@ -1,0 +1,30 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    container_name: ecommerce-api-container
+
+    ports:
+      - "5000:5000"
+
+    env_file:
+      - .env
+
+    environment:
+      - MONGO_URI=mongodb://mongodb:27017/ecommerce
+
+    depends_on:
+      - mongodb
+
+  mongodb:
+    image: mongo:8
+
+    container_name: ecommerce-mongodb
+
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:
