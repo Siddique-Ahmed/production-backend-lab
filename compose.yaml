@@ -30,6 +30,10 @@ services:
       options:
         max-size: "10m"
         max-file: "3"
+    
+    networks:
+      - app-network
+      - db-network
   mongodb:
     image: mongo:8
 
@@ -51,5 +55,12 @@ services:
 
     cpus: "1.0"
 
+    networks:
+      - db-network
+
 volumes:
   mongo-data:
+
+networks:
+  app-network:
+  db-network:
