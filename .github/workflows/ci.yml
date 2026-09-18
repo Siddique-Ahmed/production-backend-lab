@@ -2,8 +2,9 @@ name: CI
 
 on:
   push:
-    branches: 
+    branches:
       - master
+
   pull_request:
     branches:
       - master
@@ -13,9 +14,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code 
+      - name: Checkout code
         uses: actions/checkout@v4
-      
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -25,5 +26,5 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build Typescript
+      - name: Build TypeScript
         run: npm run build
