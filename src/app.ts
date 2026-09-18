@@ -19,6 +19,8 @@ app.get("/health", (req, res) => {
   });
 });
 
+// Docker cache test
+
 app.get("/test-error", (req, res) => {
   throw new AppError("This is a test error", 400);
 });
